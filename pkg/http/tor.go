@@ -1,11 +1,12 @@
 package http
 
 import (
-	"merryGoRound/pkg/proxy"
 	"net"
 	"net/http"
 	"sync"
 	"time"
+
+	"github.com/imthaghost/merryGoRound/pkg/proxy"
 )
 
 // Tor represents an HTTP Client over the Tor network

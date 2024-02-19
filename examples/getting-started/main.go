@@ -5,15 +5,16 @@ import (
 	"io/ioutil"
 	"log"
 
-	ht "merryGoRound/pkg/http"
 	"net/http"
 	"time"
+
+	ht "github.com/imthaghost/merryGoRound/pkg/http"
 )
 
 func main() {
 	// configuration for tor client
-	tor := ht.Tor {
-		MaxTimeout: 20 * time.Second,
+	tor := ht.Tor{
+		MaxTimeout:         20 * time.Second,
 		MaxIdleConnections: 10,
 	}
 
@@ -68,7 +69,7 @@ func getIP(client *http.Client) (string, error) {
 
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		return  "", err
+		return "", err
 	}
 	ip := string(body)
 
